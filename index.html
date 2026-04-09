@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI AgriYield Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1> Crop Yield Prediction</h1>
+
+    <form action="/predict" method="post">
+
+        <input type="number" step="any" name="N" placeholder="Nitrogen" required>
+        <input type="number" step="any" name="P" placeholder="Phosphorus" required>
+        <input type="number" step="any" name="K" placeholder="Potassium" required>
+        <input type="number" step="any" name="rainfall" placeholder="Rainfall" required>
+        <input type="number" step="any" name="temperature" placeholder="Temperature" required>
+        <input type="number" step="any" name="ph" placeholder="Soil pH" required>
+        <input type="number" step="any" name="year" placeholder="Year" required>
+
+        <button type="submit">Predict</button>
+
+    </form>
+
+    <h2 class="result">{{ prediction_text }}</h2>
+</div>
+
+</body>
+</html>
