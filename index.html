@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriYield Predictor</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js for the small chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <span>🌿</span>
+        <span>🌾</span>
+        <span>🌱</span>
+        <span>💧</span>
+        <span>🍂</span>
+        <span>🌻</span>
+        <span>🌿</span>
+        <span>🌾</span>
+        <span>🌱</span>
+        <span>☀️</span>
+    </div>
+
+    <div class="container">
+
+        <!-- 1. Clean Landing Section -->
+        <div id="landing-section" class="card text-center">
+            <div class="icon">🌾</div>
+            <h1>AgriYield Predictor</h1>
+            <p class="subtitle">Crop Yield Prediction using Machine Learning</p>
+            <button id="start-btn" class="primary-btn">Start Prediction</button>
+        </div>
+
+        <!-- Main Interface (Hidden Initially) -->
+        <div id="main-interface" class="hidden">
+
+            <div class="grid">
+                <!-- 2. Input Form -->
+                <div class="card">
+                    <h2>Input Parameters</h2>
+                    <form id="prediction-form">
+                        <div class="form-group">
+                            <label for="rainfall">Rainfall (mm)</label>
+                            <input type="range" id="rainfall" min="0" max="500" value="150"
+                                oninput="document.getElementById('rain-val').textContent = this.value">
+                            <span class="val-display"><span id="rain-val">150</span> mm</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="temperature">Temperature (°C)</label>
+                            <input type="range" id="temperature" min="0" max="50" value="25"
+                                oninput="document.getElementById('temp-val').textContent = this.value">
+                            <span class="val-display"><span id="temp-val">25</span> °C</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="humidity">Humidity (%)</label>
+                            <input type="range" id="humidity" min="0" max="100" value="60"
+                                oninput="document.getElementById('hum-val').textContent = this.value">
+                            <span class="val-display"><span id="hum-val">60</span> %</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nitrogen">Nitrogen (N)</label>
+                            <input type="number" id="nitrogen" placeholder="e.g. 50" value="50" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phosphorus">Phosphorus (P)</label>
+                            <input type="number" id="phosphorus" placeholder="e.g. 50" value="50" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="potassium">Potassium (K)</label>
+                            <input type="number" id="potassium" placeholder="e.g. 50" value="50" required>
+                        </div>
+
+                        <!-- 3. Predict Button -->
+                        <button type="submit" class="primary-btn full-width">Predict Yield</button>
+                    </form>
+                </div>
+
+                <!-- 4. Output Section -->
+                <div class="card result-card">
+                    <h2>Prediction Result</h2>
+
+                    <div id="initial-message">
+                        <p>Enter parameters and click predict to see results.</p>
+                    </div>
+
+                    <div id="output-section" class="hidden">
+                        <div class="yield-box">
+                            <h3>🌾 Predicted Yield:</h3>
+                            <div class="yield-value"><span id="yield-result">0.0</span> tons/hectare</div>
+                        </div>
+
+                        <!-- 5. Simple Enhancement -->
+                        <div class="enhancement-section">
+                            <h4>Input Summary</h4>
+                            <ul id="summary-list" class="summary-list">
+                                <!-- Populated by JS -->
+                            </ul>
+
+                            <h4 style="margin-top: 15px;">NPK Distribution</h4>
+                            <div class="chart-container">
+                                <canvas id="npkChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="reset-btn" class="secondary-btn hidden" style="margin-top: 20px;">Reset</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
