@@ -1,0 +1,261 @@
+/* CSS styles for the agricultural theme */
+:root {
+    --primary-color: #2e7d32; /* Earthy Green */
+    --primary-hover: #1b5e20;
+    --secondary-color: #f1f8e9;
+    --text-color: #333333;
+    --gray-light: #e0e0e0;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Enhanced Background: Soft mesh-like gradient */
+    background: linear-gradient(135deg, #f1f8e9 0%, #dcedc8 50%, #aed581 100%);
+    background-attachment: fixed;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Card Styling */
+.card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Landing Section */
+#landing-section {
+    margin-top: 10vh;
+}
+
+.icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Typography elements */
+h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+h3 {
+    color: #444;
+    font-size: 1.3rem;
+}
+
+/* Buttons */
+.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.primary-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.secondary-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.full-width {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Layout */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+input[type="range"] {
+    width: 100%;
+    accent-color: var(--primary-color);
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.val-display {
+    display: block;
+    text-align: right;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Results section */
+.yield-box {
+    background-color: var(--secondary-color);
+    border: 2px dashed var(--primary-color);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.yield-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+/* Enhancements */
+.enhancement-section {
+    background-color: #fafafa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 25px;
+    border: 1px solid var(--gray-light);
+}
+
+.summary-list {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.summary-list li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+    color: #555;
+}
+
+.chart-container {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Utilities */
+.hidden {
+    display: none !important;
+}
+
+/* Animated Agricultural Background */
+.bg-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+}
+
+.bg-animation span {
+    position: absolute;
+    display: block;
+    list-style: none;
+    bottom: -100px;
+    opacity: 0.3;
+    animation: floatUp 20s linear infinite;
+}
+
+.bg-animation span:nth-child(1) { left: 10%; font-size: 2.5rem; animation-delay: 0s; animation-duration: 22s; }
+.bg-animation span:nth-child(2) { left: 25%; font-size: 1.5rem; animation-delay: 2s; animation-duration: 25s; }
+.bg-animation span:nth-child(3) { left: 40%; font-size: 3rem; animation-delay: 4s; animation-duration: 18s; }
+.bg-animation span:nth-child(4) { left: 55%; font-size: 2rem; animation-delay: 6s; animation-duration: 20s; }
+.bg-animation span:nth-child(5) { left: 70%; font-size: 1.8rem; animation-delay: 1s; animation-duration: 24s; }
+.bg-animation span:nth-child(6) { left: 85%; font-size: 2.8rem; animation-delay: 3s; animation-duration: 19s; }
+.bg-animation span:nth-child(7) { left: 15%; font-size: 2.2rem; animation-delay: 8s; animation-duration: 21s; }
+.bg-animation span:nth-child(8) { left: 35%; font-size: 1.6rem; animation-delay: 10s; animation-duration: 23s; }
+.bg-animation span:nth-child(9) { left: 65%; font-size: 2.5rem; animation-delay: 5s; animation-duration: 26s; }
+.bg-animation span:nth-child(10){ left: 80%; font-size: 1.4rem; animation-delay: 12s; animation-duration: 17s; }
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+    }
+}
